@@ -18,6 +18,7 @@ class Serie{
 
 class Catalogo{
     var listaSeries:[Serie] = []
+    var index:Int = 0
 
     func addSerie(nome:String, ano:Int, temporadas:Int, genero:String){
         var serie = Serie(nome: nome, ano: ano, temporadas: temporadas, genero: genero)
@@ -25,13 +26,19 @@ class Catalogo{
     }
     
     func removeSerie(nome:String){
-        for serie in listaSeries {
-            if (nome == nome) {
-                catalogo.removeSerie(nome: nome)
+        for (i, serie) in listaSeries.enumerated(){
+            if (serie.nome == nome){
+                listaSeries.remove(at: i)
             }
         }
-        
     }
+    
+    func mostrarSeries(){
+        for serie in listaSeries{
+              print(serie.nome)
+          }
+    }
+  
 }
 
 let catalogo = Catalogo()
@@ -48,9 +55,9 @@ catalogo.addSerie(nome: "Todo Mundo Odeia o Chris", ano: 2005, temporadas: 4, ge
 catalogo.addSerie(nome: "Hannibal", ano: 3, temporadas: 2013, genero: "Terror")
 catalogo.addSerie(nome: "Grey's Anatomy", ano: 2005, temporadas: 15, genero: "Romance")
 
-for serie in listaSeries{
-    print(serie.nome)
-}
+catalogo.removeSerie(nome: "Vikings")
+
+catalogo.mostrarSeries()
 
 
 
