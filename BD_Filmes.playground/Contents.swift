@@ -1,41 +1,56 @@
 import UIKit
 
-class Film{
-    var nome: String
-    var ano: Int
-    var classificacao: String
-    var genero: String
+class Catalog{
+    var films: [Film]
     
-    init(nome: String, ano: Int, classificacao: String, genero: String) {
-        self.nome = nome
-        self.ano = ano
-        self.classificacao = classificacao
-        self.genero = genero
+    init(films: [Film]) {
+        self.films = films
     }
 }
 
-var list: [Film] = []
+class Film{
+    var name: String
+    var year: Int
+    var rating: String
+    var genre: String
+    
+    init(name: String, year: Int, rating: String, genre: String) {
+        self.name = name
+        self.year = year
+        self.rating = rating
+        self.genre = genre
+    }
+}
 
-var senhorDosAneis = Film(nome: "Senhor dos Anéis - A Sociedade do Anel", ano: 2001, classificacao: "12", genero: "Fantasia")
-var harryPotter = Film(nome: "Harry Potter - As Relíquias da Morte", ano: 2010, classificacao: "12", genero: "Ficção")
-var starWars = Film(nome: "Star Wars - O Despertar da Força", ano: 2015, classificacao: "12", genero: "Ficção")
-var fabricaDeChocolate = Film(nome: "A fantástica Fábrica de Chocolate", ano: 2005, classificacao: "L", genero: "Ficção")
-var ohRamona = Film(nome: "Oh Ramona", ano: 2019, classificacao: "16", genero: "Romance")
-var procuraDaFelicidade = Film(nome: "A Procura da Felicidade", ano: 2006, classificacao: "L", genero: "Drama")
-var familiaDoBagulho = Film(nome: "Família do Bagulho", ano: 2014, classificacao: "14", genero: "Comédia")
-var shrekTerceiro = Film(nome: "Shrek Terceiro", ano: 2007, classificacao: "L", genero: "Comédia")
-var esquadraoSuiucida = Film(nome: "Esquadrão Suicida", ano: 2016, classificacao: "12", genero: "Ação")
-var ondeEstaSegunda = Film(nome: "Onde Está Segunda", ano: 2017, classificacao: "16", genero: "Ação")
+var allCatalog: [Any] = []
 
-list.append(senhorDosAneis)
-list.append(harryPotter)
-list.append(starWars)
-list.append(fabricaDeChocolate)
-list.append(ohRamona)
-list.append(procuraDaFelicidade)
-list.append(familiaDoBagulho)
-list.append(shrekTerceiro)
-list.append(esquadraoSuiucida)
-list.append(ondeEstaSegunda)
+var listFilms: [Film] = []
 
-print(list[0])
+allCatalog.append(listFilms)
+
+func add_Film(name: String, year: Int, rating: String, genre: String){
+    let film = Film(name: name, year: year, rating: rating, genre: genre)
+    
+    listFilms.append(film)
+    
+}
+
+add_Film(name: "Resident Evil 2: Apocalipse", year: 2008, rating: "16", genre: "Ficção")
+add_Film(name: "Senhor dos Anéis - A Sociedade do Anel", year: 2001, rating: "12", genre: "Fantasia")
+add_Film(name: "Harry Potter - As Relíquias da Morte", year: 2010, rating: "12", genre: "Ficção")
+add_Film(name: "Star Wars - O Despertar da Força", year: 2015, rating: "12", genre: "Ficção")
+add_Film(name: "A fantástica Fábrica de Chocolate", year: 2005, rating: "L", genre: "Ficção")
+add_Film(name: "Oh Ramona", year: 2019, rating: "16", genre: "Romance")
+add_Film(name: "A Procura da Felicidade", year: 2006, rating: "L", genre: "Drama")
+add_Film(name: "Família do Bagulho", year: 2014, rating: "14", genre: "Comédia")
+add_Film(name: "Shrek Terceiro", year: 2007, rating: "L", genre: "Comédia")
+add_Film(name: "Esquadrão Suicida", year: 2016, rating: "12", genre: "Ação")
+add_Film(name: "Onde Está Segunda", year: 2017, rating: "16", genre: "Ação")
+
+for filme in listFilms{
+    print("Filme: \(filme.name) Ano: \(filme.year) Classificação: \(filme.rating) Gênero: \(filme.genre)")
+}
+
+for item in allCatalog{
+    
+}
