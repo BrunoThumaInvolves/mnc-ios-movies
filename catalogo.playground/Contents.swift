@@ -17,27 +17,40 @@ class Serie{
 }
 
 class Catalogo{
-    var lista_series:[Serie] = []
+    var listaSeries:[Serie] = []
 
-    func add_serie(nome:String, ano:Int, temporadas:Int, genero:String){
+    func addSerie(nome:String, ano:Int, temporadas:Int, genero:String){
         var serie = Serie(nome: nome, ano: ano, temporadas: temporadas, genero: genero)
-        lista_series.append(serie)
+        listaSeries.append(serie)
+    }
+    
+    func removeSerie(nome:String){
+        for serie in listaSeries {
+            if (nome == nome) {
+                catalogo.removeSerie(nome: nome)
+            }
+        }
+        
     }
 }
 
 let catalogo = Catalogo()
 
-catalogo.add_serie(nome: "Game of Thrones", ano: 2011, temporadas: 8, genero: "Fantasia")
-catalogo.add_serie(nome: "Breaking Bad", ano: 2008, temporadas: 5, genero: "Drama")
-catalogo.add_serie(nome: "Vikings", ano: 2013, temporadas: 5, genero: "Drama")
-catalogo.add_serie(nome: "American Horror Story", ano: 2011, temporadas: 9, genero: "Horror")
-catalogo.add_serie(nome: "Anne with an E", ano: 2017, temporadas: 2, genero: "Drama")
-catalogo.add_serie(nome: "Supernatural", ano: 2005, temporadas: 15, genero: "Terror")
-catalogo.add_serie(nome: "House", ano: 2004, temporadas: 8, genero: "Comédia")
-catalogo.add_serie(nome: "Two and a Half Men", ano: 2003, temporadas: 12, genero: "Comédia")
-catalogo.add_serie(nome: "Todo Mundo Odeia o Chris", ano: 2005, temporadas: 4, genero: "Comédia")
-catalogo.add_serie(nome: "Hannibal", ano: 3, temporadas: 2013, genero: "Terror")
-catalogo.add_serie(nome: "Grey's Anatomy", ano: 2005, temporadas: 15, genero: "Romance")
+catalogo.addSerie(nome: "Game of Thrones", ano: 2011, temporadas: 8, genero: "Fantasia")
+catalogo.addSerie(nome: "Breaking Bad", ano: 2008, temporadas: 5, genero: "Drama")
+catalogo.addSerie(nome: "Vikings", ano: 2013, temporadas: 5, genero: "Drama")
+catalogo.addSerie(nome: "American Horror Story", ano: 2011, temporadas: 9, genero: "Horror")
+catalogo.addSerie(nome: "Anne with an E", ano: 2017, temporadas: 2, genero: "Drama")
+catalogo.addSerie(nome: "Supernatural", ano: 2005, temporadas: 15, genero: "Terror")
+catalogo.addSerie(nome: "House", ano: 2004, temporadas: 8, genero: "Comédia")
+catalogo.addSerie(nome: "Two and a Half Men", ano: 2003, temporadas: 12, genero: "Comédia")
+catalogo.addSerie(nome: "Todo Mundo Odeia o Chris", ano: 2005, temporadas: 4, genero: "Comédia")
+catalogo.addSerie(nome: "Hannibal", ano: 3, temporadas: 2013, genero: "Terror")
+catalogo.addSerie(nome: "Grey's Anatomy", ano: 2005, temporadas: 15, genero: "Romance")
+
+for serie in listaSeries{
+    print(serie.nome)
+}
 
 
 
