@@ -10,7 +10,7 @@ class Catalog{
         films.append(film)
     }
     
-    func addToFavorites(name: String){
+    func addFavorites(name: String){
         for film in films{
             if name == film.name{
                 favorites.append(film)
@@ -27,6 +27,14 @@ class Catalog{
     func showFavorites(){
         for fav in favorites{
             print("Filme: \(fav.name) Ano: \(fav.year) Classificação: \(fav.rating) Gênero: \(fav.genre)")
+        }
+    }
+    
+    func removeFavorite(name: String){
+        for (index ,nameFav) in favorites.enumerated(){
+            if name == nameFav.name{
+                favorites.remove(at: index)
+            }
         }
     }
     
@@ -61,5 +69,8 @@ catalogo.add_Film(name: "Esquadrão Suicida", year: 2016, rating: "12", genre: "
 catalogo.add_Film(name: "Onde Está Segunda", year: 2017, rating: "16", genre: "Ação")
 
 catalogo.showFilms()
-catalogo.addToFavorites(name: "Oh Ramona")
+catalogo.addFavorites(name: "Oh Ramona")
+catalogo.addFavorites(name: "Esquadrão Suicida")
+catalogo.addFavorites(name: "Onde Está Segunda")
+catalogo.removeFavorite(name: "Oh Ramona")
 catalogo.showFavorites()
