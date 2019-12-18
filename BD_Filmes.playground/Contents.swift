@@ -14,6 +14,9 @@ class Catalog{
         for film in films{
             if name == film.name{
                 favorites.append(film)
+                print("Item adicionado à lista de favoritos!")
+            }else{
+                print("Item não encontrado!")
             }
         }
     }
@@ -21,6 +24,7 @@ class Catalog{
     func addWish(tittle: String, year: Int, director: String, description: String){
         let wish = Wishes(tittle: tittle, year: year, director: director, description: description)
         wishes.append(wish)
+        print("Pedido adicionado!")
     }
     
     func showFilms(){
@@ -44,10 +48,26 @@ class Catalog{
         }
     }
     
+    func removeFilm(name: String){
+        for (index ,nameFilm) in films.enumerated(){
+            if name == nameFilm.name{
+                films.remove(at: index)
+            }
+        }
+    }
+    
     func removeFavorite(name: String){
         for (index ,nameFav) in favorites.enumerated(){
             if name == nameFav.name{
                 favorites.remove(at: index)
+            }
+        }
+    }
+    
+    func removeWish(tittle: String){
+        for (index ,wish) in wishes.enumerated(){
+            if tittle == wish.tittle{
+                wishes.remove(at: index)
             }
         }
     }
@@ -95,12 +115,15 @@ catalogo.addFilm(name: "Família do Bagulho", year: 2014, rating: "14", genre: "
 catalogo.addFilm(name: "Shrek Terceiro", year: 2007, rating: "L", genre: "Comédia")
 catalogo.addFilm(name: "Esquadrão Suicida", year: 2016, rating: "12", genre: "Ação")
 catalogo.addFilm(name: "Onde Está Segunda", year: 2017, rating: "16", genre: "Ação")
-
-catalogo.showFilms()
 catalogo.addFavorites(name: "Oh Ramona")
 catalogo.addFavorites(name: "Esquadrão Suicida")
 catalogo.addFavorites(name: "Onde Está Segunda")
-catalogo.removeFavorite(name: "Oh Ramona")
-catalogo.showFavorites()
 catalogo.addWish(tittle: "Malévola", year: 2014, director: "Robert Stromberg", description: "Esse filme é muito bom!")
+catalogo.addWish(tittle: "Malévola 1", year: 2014, director: "Robert Stromberg", description: "Esse filme é muito bom!")
+catalogo.addWish(tittle: "Malévola 2", year: 2014, director: "Robert Stromberg", description: "Esse filme é muito bom!")
+catalogo.removeFilm(name: "Família do Bagulho")
+catalogo.removeFavorite(name: "Oh Ramona")
+catalogo.removeWish(tittle: "Malévola")
+catalogo.showFilms()
+catalogo.showFavorites()
 catalogo.showWishes()
