@@ -35,7 +35,7 @@ class Catalogo{
     
     func mostrarSeries(){
         for serie in listaSeries{
-              print(serie.nome)
+            print("Nome: \(serie.nome); Ano: \(serie.ano); Temporadas: \(serie.temporadas); Gênero: \(serie.genero)")
           }
     }
   
@@ -55,7 +55,7 @@ catalogo.addSerie(nome: "Todo Mundo Odeia o Chris", ano: 2005, temporadas: 4, ge
 catalogo.addSerie(nome: "Hannibal", ano: 3, temporadas: 2013, genero: "Terror")
 catalogo.addSerie(nome: "Grey's Anatomy", ano: 2005, temporadas: 15, genero: "Romance")
 
-catalogo.removeSerie(nome: "Vikings")
+catalogo.removeSerie(nome: "Hannibal")
 
 catalogo.mostrarSeries()
 
