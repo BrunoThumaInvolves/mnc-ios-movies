@@ -27,15 +27,15 @@ class Catalogo {
     }
     
     func addFavorites(name: String){
-        for fav in movies{
-            if name == fav.name{
-                favoritesMovies.append(fav)
+        for serie in listaSeries{
+            if name == serie.nome{
+                favoritesSeries.append(serie)
             }
         }
         
-        for fav in listaSeries{
-            if name == fav.nome {
-                favoritesSeries.append(fav)
+        for movie in movies{
+            if name == movie.name {
+                favoritesMovies.append(movie)
             }
         }
         
@@ -61,6 +61,7 @@ class Catalogo {
     }
     
     func showFavorites(){
+       
         print("\nEsses são os seus filmes favoritos:\n")
         for fav in favoritesMovies{
             print("Filme: \(fav.name) Ano: \(fav.year) Classificação: \(fav.rating) Gênero: \(fav.genre)")
