@@ -13,7 +13,8 @@ class Catalogo {
     var listaSeries:[Serie] = []
     var movies: [Movie] = []
     var wishes:[Wishes] = []
-    var favorites: [Movie] = []
+    var favoritesMovies: [Movie] = []
+    var favoritesSeries: [Serie] = []
     
     func addMovie(name: String, year: Int, rating: String, genre: String){
         let movie = Movie(name: name, year: year, rating: rating, genre: genre)
@@ -28,9 +29,16 @@ class Catalogo {
     func addFavorites(name: String){
         for fav in movies{
             if name == fav.name{
-                favorites.append(fav)
+                favoritesMovies.append(fav)
             }
         }
+        
+        for fav in listaSeries{
+            if name == fav.nome {
+                favoritesSeries.append(fav)
+            }
+        }
+        
     }
     
     func addWish(tittle: String, year: Int, director: String, description: String){
@@ -53,14 +61,18 @@ class Catalogo {
     }
     
     func showFavorites(){
-        print("\nEsses são os seus favoritos:\n")
-        for fav in favorites{
+        print("\nEsses são os seus filmes favoritos:\n")
+        for fav in favoritesMovies{
             print("Filme: \(fav.name) Ano: \(fav.year) Classificação: \(fav.rating) Gênero: \(fav.genre)")
+        }
+        print("\nEsses são as suas séries favoritas:\n")
+        for fav in favoritesSeries {
+            print("Nome: \(fav.nome); Ano: \(fav.ano); Temporadas: \(fav.temporadas); Gênero: \(fav.genero)")
         }
     }
     
     func showWishes(){
-        print("\nEsses são os seus pedidos:\n")
+        print("\nEssa é a sua lista de desejos:\n")
         for wish in wishes{
             print("Filme: \(wish.tittle) Ano: \(wish.year) Diretor: \(wish.director) Descrição do pedido: \(wish.description)")
         }
@@ -83,9 +95,15 @@ class Catalogo {
     }
     
     func removeFavorite(name: String){
-        for (index ,fav) in favorites.enumerated(){
+        for (index ,fav) in favoritesMovies.enumerated(){
             if name == fav.name{
-                favorites.remove(at: index)
+                favoritesMovies.remove(at: index)
+            }
+        }
+        
+        for (index, fav) in favoritesSeries.enumerated() {
+            if name == fav.nome{
+                favoritesSeries.remove(at: index)
             }
         }
     }
