@@ -15,7 +15,7 @@ class Catalogo {
     var wishes:[Wishes] = []
     var favorites: [Movie] = []
     
-    func addFilm(name: String, year: Int, rating: String, genre: String){
+    func addMovie(name: String, year: Int, rating: String, genre: String){
         let movie = Movie(name: name, year: year, rating: rating, genre: genre)
         movies.append(movie)
     }
