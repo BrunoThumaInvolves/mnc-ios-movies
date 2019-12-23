@@ -63,12 +63,12 @@ class Catalogo {
     func showFavorites(){
        
         print("\nEsses são os seus filmes favoritos:\n")
-        for fav in favoritesMovies{
-            print("Filme: \(fav.name) Ano: \(fav.year) Classificação: \(fav.rating) Gênero: \(fav.genre)")
+        for favmovie in favoritesMovies{
+            print("Filme: \(favmovie.name) Ano: \(favmovie.year) Classificação: \(favmovie.rating) Gênero: \(favmovie.genre)")
         }
         print("\nEsses são as suas séries favoritas:\n")
-        for fav in favoritesSeries {
-            print("Nome: \(fav.nome); Ano: \(fav.ano); Temporadas: \(fav.temporadas); Gênero: \(fav.genero)")
+        for favserie in favoritesSeries {
+            print("Nome: \(favserie.nome); Ano: \(favserie.ano); Temporadas: \(favserie.temporadas); Gênero: \(favserie.genero)")
         }
     }
     

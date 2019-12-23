@@ -41,8 +41,9 @@ class ViewController: UIViewController {
         catalogo.addFavorites(name: "Oh Ramona")
         catalogo.addFavorites(name: "Esquadrão Suicida")
         catalogo.addFavorites(name: "Onde Está Segunda")
-        catalogo.addFavorites(name: "Game Of Thrones")
+        catalogo.addFavorites(name: "Breaking Bad")
         catalogo.addFavorites(name: "House")
+        catalogo.addFavorites(name: "Game of Thrones")
         catalogo.addWish(tittle: "Malévola", year: 2014, director: "Robert Stromberg", description: "Esse filme é muito bom!")
         
         catalogo.removeMovie(name: "Família do Bagulho")
